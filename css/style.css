@@ -1,0 +1,41 @@
+.board {
+    border-collapse: collapse;
+    width: 75%;
+    margin: auto;
+}
+
+.board thead {
+    text-align: center;
+}
+
+.board td {
+    border: 1px solid #000000;
+}
+
+.no {
+    min-width: 60px;
+    max-width: 60px;
+    width: 60px;
+    padding: 1px 5px 1px 5px;
+    text-align: right;
+}
+
+.title {
+    padding-left: 10px;
+    padding-right: 10px;
+    max-width: 100px;
+    text-overflow: ellipsis;
+    overflow:hidden;
+}
+
+.title:hover {
+    cursor: pointer;
+    text-decoration: underline;
+}
+
+.date {
+    min-width: 160px;
+    max-width: 160px;
+    width: 160px;
+    text-align: center;
+}
