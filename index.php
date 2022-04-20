@@ -30,8 +30,12 @@
             <?php
             while ($rows = mysqli_fetch_assoc($result)) {   ?>
                 <tr>
-                    <td class="no"><?php echo $rows['BOARD_NO']?></td>
-                    <td class="title" onClick="location.href='../context.php'"><?php echo $rows['TITLE']?></td>
+                    <?php
+                    $no = $rows['BOARD_NO'];
+                    $link = "location.href='../context.php?no=$no'";
+                    ?>
+                    <td class="no"><?php echo $no?></td>
+                    <td class="title" onClick=<?php echo $link?>><?php echo $rows['TITLE'] ?></td>
                     <td class="date"><?php echo $rows['REG_YMD']?></td>
                 </tr>   <?php  
             }   ?>
