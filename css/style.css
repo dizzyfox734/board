@@ -1,3 +1,37 @@
+img.banner {
+    width: 1920px;
+    height: 91px;
+    margin: 0 0 69.9px;
+    object-fit: contain;
+}
+
+.body {
+    width: 1250px;
+    margin: auto;
+}
+
+img.userIcon {
+    width: 30.1px;
+    height: 30.1px;
+    object-fit: contain;
+    vertical-align:middle;
+}
+
+.pageName {
+    width: 82px;
+    height: 34px;
+    object-fit: contain;
+    font-family: NanumSquare;
+    font-size: 30px;
+    font-weight: bold;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    text-align: center;
+    color: #000;
+}
+
 .board {
     border-collapse: collapse;
     width: 75%;
