@@ -15,20 +15,34 @@
         <!-- body -->
         <div class="container">
             <div class="d-flex detail">
-                <h2>글쓰기</h2>
+                <h2 class="m-0">수정하기</h2>
             </div>
             <div class="table-container">
                 <table class="board">
-                    <thead>
                         <tr>
-                            <td>제목</td>
-                            <td>내용</td>
-                            <td>작성자</td>
-                            <td>비밀번호</td>
-                            <td>공개글 설정</td>
+                            <th class="th-grey">제목</th>
+                            <td></td>
                         </tr>
-                    </thead>
+                        <tr>
+                            <th class="th-grey">내용</th>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <th class="th-grey">작성자</th>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <th class="th-grey">비밀번호</th>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <th class="th-grey">공개글 설정</th>
+                            <td></td>
+                        </tr>
                 </table>
+
+
+                
             </div>
             <div class="d-flex align-items-center justify-content-center">
                 <a class="no-deco btn btn-white" href="">취소</a>

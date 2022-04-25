@@ -16,7 +16,7 @@
         <div class="container">
             <div class="d-flex detail">
                 <div class="userIcon-img"></div>
-                <h2>방명록</h2>
+                <h2 class="m-0">방명록</h2>
             </div>
             <div class="table-container">
                 <table class="board">
