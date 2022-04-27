@@ -19,7 +19,7 @@
                 <h2 class="m-0">방명록</h2>
             </div>
             <div class="table-container">
-                <table class="board">
+            	<table class="board">
                     <thead>
                         <tr>
                             <td>번호</td>
@@ -36,13 +36,13 @@
 
             <?php
             $host = "localhost";
-            $user = "root";
-            $pw = "1234";
-            $db = "BOARDDB";
+            $user = "phpmyadmin";
+            $pw = "asdf1234";
+            $db = "GUESTBOOKDB";
 
-            $conn = mysqli_connect($host, $user, $pw, $db) or die("connect failed.");
+            $conn = mysqli_connect($host, $user, $pw, $db) or die("connect failed." . mysql_error());
 
-            $query = "select BOARD_NO, TITLE, DEL_FL, REG_YMD from board_tb WHERE DEL_FL='N' order by BOARD_NO desc;";
+            $query = "select NO, TITLE, DEL_FL, ID, REG_YMD VIEW_CNT, CMT_CNT from board_tb WHERE DEL_FL='N' order by NO desc;";
             $result = mysqli_query($conn, $query);
             $total = mysqli_num_rows($result);
             ?>
