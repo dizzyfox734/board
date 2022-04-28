@@ -2,7 +2,8 @@
 <html>
     <head>
         <meta charset="utf-8">
-        <link rel="stylesheet" type="text/css" href="css/style.css" />
+	<link rel="stylesheet" type="text/css" href="/assets/css/style.css" />
+	<link rel="stylesheet" type="text/css" href="/assets/css/top.css" />
         <title>
         <?php
         echo $title = $_GET['title'];
@@ -10,15 +11,15 @@
         </title>
     </head>
     <body>
-    <?php
-        $host = "localhost";
-        $user = "root";
-        $pw = "1234";
-        $db = "BOARDDB";
+	<!-- header -->
+	<div class="d-flex banner">
+	    <div class="login-img"></div>
+	</div>
 
-        $conn = mysqli_connect($host, $user, $pw, $db) or die("connect failed.");
-
-        $query = "select MAIN_TEXT from maintext_tb;";
-    ?>
+	<!-- body -->
+	<div class="container">
+	    <div class="d-flex detail">
+	    </div>
+	</div>
     </body>
 </html>
