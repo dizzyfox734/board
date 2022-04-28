@@ -1,0 +1,7 @@
+phpmyadmin
+
+# Environment
+.env
+
+# Temporary
+writable/*
