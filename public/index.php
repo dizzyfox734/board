@@ -1,1 +1,1 @@
-<a href="/index.php/home">test123</a>
+<a href="/home">test</a>
