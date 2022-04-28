@@ -6,11 +6,11 @@ class Home extends BaseController
 {
     public function index()
     {
-	#return redirect()->to('/home/main');
-        return view('welcome_message');
+		return redirect()->to('/home/firstpage');
+        // return view('welcome_message');
     }
 
-    public function main()
+    public function firstPage()
     {
 	return view('main');
     }
