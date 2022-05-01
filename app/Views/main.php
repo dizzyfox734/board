@@ -42,9 +42,13 @@
 
             $conn = mysqli_connect($host, $user, $pw, $db) or die("connect failed." . mysql_error());
 
-            $query = "select NO, TITLE, DEL_FL, ID, REG_YMD VIEW_CNT, CMT_CNT from board_tb WHERE DEL_FL='N' order by NO desc;";
+            $query = "SELECT * FROM `BOARD_TB` WHERE `DEL_FL` = 'N' ORDER BY NO DESC";
             $result = mysqli_query($conn, $query);
-            $total = mysqli_num_rows($result);
+
+			if( ($total = mysqli_num_rows($result))>0 ) {
+			} else {
+				echo "NO RECORDS FOUND!";
+			}
             ?>
             <table class="board">
                 <thead>
@@ -59,7 +63,7 @@
                 while ($rows = mysqli_fetch_assoc($result)) {   ?>
                     <tr>
                         <?php
-                        $no = $rows['BOARD_NO'];
+                        $no = $rows['NO'];
                         $link = "location.href='../context.php?no=$no'";
                         ?>
                         <td class="no"><?php echo $no?></td>
