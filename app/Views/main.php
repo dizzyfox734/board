@@ -9,7 +9,7 @@
     <body>
         <!-- header -->
         <div class="d-flex banner">
-            <div class="login-img"></div>
+            <div class="banner-img"></div>
         </div>
 
         <!-- body -->
@@ -31,10 +31,13 @@
 
 			if( ($total = mysqli_num_rows($result))>0 ) {
 			} else {
-				echo "NO RECORDS FOUND!";
+				echo "등록된 글이 없습니다.";
 			}
             ?>
             <div class="table-container">
+				<div class="mb-1 d-flex width-full justify-content-end">
+					<a class="no-deco btn btn-purple m-0" href="/board/edit">글쓰기</a>
+				</div>
             	<table class="board">
                     <thead>
                         <tr>
@@ -63,10 +66,6 @@
 					</tbody>
                 </table>
             </div>
-            <div>
-                <button type="button" onClick="location.href='../write.php'">write</button>
-            </div>
-
         </div>
     </body>
 </html>

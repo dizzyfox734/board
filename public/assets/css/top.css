@@ -3,7 +3,7 @@ body {
     height: 100%;
 }
 
-.login-img {
+.banner-img {
     background: url('/assets/img/banner.png');
     background-position: center;
     background-repeat: no-repeat;

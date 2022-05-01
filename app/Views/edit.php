@@ -9,7 +9,7 @@
     <body>
         <!-- header -->
         <div class="d-flex banner">
-            <div class="login-img"></div>
+            <div class="banner-img"></div>
         </div>
 
         <!-- body -->
@@ -34,7 +34,7 @@
                 
             </div>
             <div class="d-flex align-items-center justify-content-center">
-                <a class="no-deco btn btn-white" href="">취소</a>
+                <a class="no-deco btn btn-white" href="/main">취소</a>
                 <a class="no-deco btn btn-purple" href="">완료</a>
             </div>
         </div>
