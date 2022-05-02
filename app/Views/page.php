@@ -3,6 +3,7 @@
     <head>
         <meta charset="utf-8">
         <link rel="stylesheet" type="text/css" href="/assets/css/style.css" />
+        <link rel="stylesheet" type="text/css" href="/assets/css/table.css" />
         <link rel="stylesheet" type="text/css" href="/assets/css/top.css" />
         <title>Board</title>
     </head>
