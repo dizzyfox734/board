@@ -55,7 +55,7 @@
 						<tr>
 							<?php
 							$no = $rows['NO'];
-							$link = "location.href='../context.php?no=$no'";
+							$link = "location.href='../page.php?no=$no'";
 							?>
 							<td><?php echo $no?></td>
 							<td class="title" onClick=<?php echo $link?>><?php echo $rows['TITLE'] ?></td>

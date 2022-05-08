@@ -2,7 +2,7 @@
 
 namespace App\Controllers;
 
-class Board extends BaseController
+class Content extends BaseController
 {
     public function edit()
     {
@@ -11,6 +11,6 @@ class Board extends BaseController
 
 	// $no 넣어서 db 
 	public function page() {
-		return view('page');
+		return view('/page');
 	}
 }

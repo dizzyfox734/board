@@ -2,8 +2,20 @@
     margin: 0 !important;
 }
 
+.p-1 {
+    padding: 1rem !important;
+}
+
+.px-1 {
+    padding: 0 1rem !important;
+}
+
+.py-1 {
+    padding: 1rem 0 !important;
+}
+
 .mb-1 {
-    margin-bottom: 0.5rem;
+    margin-bottom: 0.5rem !important;
 }
 
 .d-flex {
@@ -14,11 +26,15 @@
     align-items: center;
 }
 
-.justify-content-center{
+.justify-content-center {
     justify-content: center;
 }
 
-.justify-content-end{
+.justify-content-between {
+    justify-content: space-between;
+}
+
+.justify-content-end {
     justify-content: flex-end;
 }
 
@@ -55,6 +71,12 @@
     width: 30px;
 }
 
+.purpleUserIcon-img {
+    background: url('/assets/img/userIcon_purple.png');
+    width: 25px;
+	height: auto;
+}
+
 .shadow {
     box-shadow: 0 0.10rem 0.15rem 0.10rem rgb(58 59 69 / 20%) !important;
 }
@@ -72,4 +94,13 @@
     border: 1px solid #ececec85;
     border-radius: 0.35rem;
     resize: none;
+}
+
+.round {
+    border: 1px solid #ececec85;
+	border-radius: 0.5rem;
+}
+
+.border-bottom {
+	border-bottom: 1px solid #ececec85;
 }
