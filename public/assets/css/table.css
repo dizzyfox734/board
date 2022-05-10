@@ -3,9 +3,12 @@
 }
 
 .board {
-    border-top: #a166d5 solid 2px;
     width: 100%;
     text-align: center;
+}
+
+.board-purple-top {
+    border-top: #a166d5 solid 2px;
 }
 
 .b-thead {
@@ -21,13 +24,6 @@
     font-size: 1rem;
 }
 
-.no {
-    min-width: 60px;
-    max-width: 60px;
-    width: 60px;
-    padding: 1px 5px 1px 5px;
-}
-
 .title {
     padding-left: 10px;
     padding-right: 10px;
@@ -39,10 +35,4 @@
 .title:hover {
     cursor: pointer;
     text-decoration: underline;
-}
-
-.date {
-    min-width: 160px;
-    max-width: 160px;
-    width: 160px;
 }
