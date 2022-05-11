@@ -54,7 +54,7 @@
         <div class="round warning hidden text-center">
             <h3 class="mb-1">비밀번호 확인</h3>
             <h4 class="m-0 mb-2">비밀번호가 일치하지 않습니다</h4>
-            <div class="d-flex justify-content-center">
+            <div class="d-flex justify-content-center mb-2">
                 <button type="button" class="btn btn-purple" onClick="">확인</button>
             </div>
         </div>

@@ -37,7 +37,7 @@
             ?>
             <div class="table-container">
 				<div class="mb-1 d-flex width-full justify-content-end">
-					<a class="no-deco btn btn-purple m-0" href="/board/edit">글쓰기</a>
+					<a class="no-deco btn btn-purple m-0" href="/content/edit">글쓰기</a>
 				</div>
             	<table class="board b-cell">
                     <thead class="b-thead">

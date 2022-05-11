@@ -89,11 +89,11 @@
         </div>
 
         <!-- 댓글삭제 눌렀을 때 -->
-        <div class="round warning hidden text-center">
+        <div class="round warning text-center"> <!-- hidden  --> 
             <h3 class="mb-1">댓글을 삭제하시겠습니까?</h3>
             <h4 class="m-0 mb-2">삭제 시 복구가 불가능합니다</h4>
             <h4 class="m-0 mb-2">글 작성 시 설정한 비밀번호를 입력해주세요</h4>
-            <div class="d-flex justify-content-center">
+            <div class="d-flex justify-content-center mb-2">
                 <button type="button" class="btn btn-white" onClick="">취소</button>
                 <button type="button" class="btn btn-purple" onClick="">확인</button>
             </div>
