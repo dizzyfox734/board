@@ -4,11 +4,12 @@
             <div class="purpleUserIcon-img"></div>
             <h3 class="m-0">방명록</h3>
         </div>
-        <h2 class="m-0 mb-1">제목</h2>
+        <h2 class="m-0 mb-1"><?= $content['title'] ?></h2>
         <div class="d-flex justify-content-between">
             <div>
-                <span>작성자</span>
-                <span>작성일</span>
+                <span><?= $content['author'] ?></span>
+                <span class="text-gray"><?= $content['created_at'] ?></span>
+                <span class="text-gray">조회 <?= $content['VIEW_CNT'] ?></span>
             </div>
             <div>
                 <a class="no-deco btn btn-white" herf="">삭제</a>
@@ -17,7 +18,7 @@
         </div>
     </div>
     <div class="p-1 border-bottom">
-        <div>글내용</div>
+        <div><?= $content['text'] ?></div>
     </div>
     <div class="p-1 border-bottom">
         <div class="d-flex mb-1">

@@ -168,3 +168,7 @@
 .hidden {
     display: none;
 }
+
+.text-gray {
+    color: #969696;
+}
