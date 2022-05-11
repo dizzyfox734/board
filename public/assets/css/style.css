@@ -156,6 +156,10 @@
     text-align: center;
 }
 
+.text-black {
+    color: #000;
+}
+
 .warning {
     width: 400px;
     height: auto;
