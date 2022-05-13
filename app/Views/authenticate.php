@@ -1,7 +1,6 @@
 <div class="detail">
-    <h2 class="m-0 mb-1">게시글 수정 / 삭제</h2>
-    <!-- 삭제 시에만 -->
-    <div>게시글 삭제 시 복구가 불가능합니다.</div>
+    <h2 class="m-0 mb-1">게시글 <?php if($type==='edit') { echo '수정'; } else { echo '삭제'; } ?></h2>
+    <?php if($type==='delete') { echo '<div>게시글 삭제 시 복구가 불가능합니다.</div>'; } ?>
 </div>
 <div class="round shadow mb-2 p-1">
     <div>글 정보</div>
@@ -30,7 +29,7 @@
     </div>
 </div>
 <div class="d-flex justify-content-center">
-    <a class="no-deco btn btn-white" herf="/home/main">취소</a>
+    <a class="no-deco btn btn-white" href="/home/main">취소</a>
     <button type="button" class="btn btn-purple" onClick="">완료</button>
 </div>
 <div class="round warning hidden text-center">
@@ -40,5 +39,3 @@
         <button type="button" class="btn btn-purple" onClick="">확인</button>
     </div>
 </div>
-
-<!-- https://remixicon.com/ -->

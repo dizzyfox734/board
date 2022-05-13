@@ -11,7 +11,7 @@ class Home extends Model
 
     protected $useSoftDeletes = true;
     
-    // protected $allowedFields = ['id', 'text'];
+    protected $allowedFields = ['content', 'deleted_at'];
 
     protected $useTimestamps = true;
     protected $createdField = 'created_at';

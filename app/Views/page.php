@@ -9,16 +9,16 @@
             <div>
                 <span><?= $content['author'] ?></span>
                 <span class="text-gray"><?= $content['created_at'] ?></span>
-                <span class="text-gray">조회 <?= $content['VIEW_CNT'] ?></span>
+                <span class="text-gray">조회 <?= $content['view_cnt'] ?></span>
             </div>
             <div>
-                <a class="no-deco btn btn-white" herf="">삭제</a>
-                <a class="no-deco btn btn-white" herf="">수정</a>
+                <a class="no-deco btn btn-white" href="">삭제</a>
+                <a class="no-deco btn btn-white" href="/content/edit/<?=$content['id']?>">수정</a>
             </div>
         </div>
     </div>
     <div class="p-1 border-bottom">
-        <div><?= $content['text'] ?></div>
+        <div><?= $content['content'] ?></div>
     </div>
     <div class="p-1 border-bottom">
         <div class="d-flex mb-1">
@@ -66,7 +66,7 @@
         <button type="button" class="btn btn-white" onClick="">다음글</button>
     </div>
     <div class="d-flex">
-        <a class="no-deco btn btn-white" herf="/home/main">목록</a>
+        <a class="no-deco btn btn-white" href="/home/main">목록</a>
         <button type="button" class="btn btn-white" onClick="">TOP</button>
     </div>
 </div>

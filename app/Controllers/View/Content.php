@@ -9,25 +9,53 @@ class Content extends ViewController
 		// Do Not Edit This Line
         parent::initController($request, $response, $logger);
 
-        $this->model = model('Home');
+        $this->model = model('Content');
     }
 
-	// $no 넣어서 db 
 	public function page($id) {
         $viewData = [];
 
-        $data = $this->model->find($id);
-        $viewData['content'] = $data;
+        if(is_numeric($id)) {
+            $content = $this->model->find($id);
+            
+            if(empty($content) || !$content) {
+                return $this->response->redirect("/home/main");
+            }
+
+            $viewData['content'] = $content;
+        }
 		return $this->showView('/page', $viewData);
 	}
 
-    public function edit()
+    public function edit($id=null)
     {
-        return $this->showView('/edit');
+        $viewData = [];
+
+        if(is_numeric($id)) { // 수정  시 비번 인증
+            return $this->authenticate('edit', $id);
+        }
+        // $content = $this->model->find($id);
+        
+        // if(empty($content) || !$content) {
+        //     return $this->response->redirect("/home/main");
+        // }
+        // $viewData['content'] = $content;
+        
+        // 글쓰기
+        return $this->showView('/edit', $viewData);
     }
     
-    public function authenticate()
+    public function authenticate($type, $id)
     {
-        return $this->showView('/authenticate');
+        $viewData = [];
+
+        if($type != 'edit' && $type != 'delete') {
+            return $this->response->redirect("/home/main");
+        }
+
+        $content = $this->model->find($id);
+        $viewData['type'] = $type;
+        $viewData['content'] = $content;
+        return $this->showView('/authenticate', $viewData);
     }
 }
