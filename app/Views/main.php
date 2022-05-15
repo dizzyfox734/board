@@ -9,7 +9,7 @@
     <div class="mb-1 d-flex width-full justify-content-end">
         <a class="no-deco btn btn-purple m-0" href="/content/edit">글쓰기</a>
     </div>
-    <table class="board b-cell">
+    <table id="content-table" class="board b-cell">
         <thead class="b-thead">
             <tr>
                 <td class="th-grey">번호</td>
@@ -20,6 +20,16 @@
             </tr>
         </thead>
         <tbody>
+			<?php 
+			foreach($list as $content) { ?>
+			<tr>
+			<td><?=$content->id?></td>
+			<td><a class="no-deco text-black" href="/content/page/<?=$content->id?>"><?=$content->title?></a></td>
+			<td><?=$content->author?></td>
+			<td><?=$content->created_dt?></td>
+			<td><?=$content->view_cnt?></td>
+			</tr>
+			<?php } ?>
         </tbody>
     </table>
 </div>
