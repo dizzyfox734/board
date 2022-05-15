@@ -2,19 +2,21 @@ const form = document.querySelector("#content-form");
 
 function edit(id = false) {
     const formData = new FormData(form);
-    let url = "/ajax/content/save"
+    let url = "/content/save"
 
     if(id) {
         url += "/" + id;
-        formData.set('password', password_hash(formData.get('password'), PASSWORD_DEFAULT));
     }
 
+    alert(formData.get('password'));
+
     fetch(url, {
-        method: 'POST',
+        method: 'post',
         cache: 'no-cache',
-        // headers: {
-        //     'Content-Type': 'mulipart/form-data;'
-        // },
+        headers: {
+            // 'Content-Type': 'mulipart/form-data;'
+        },
+		referrer: 'no-referrer',
         body: formData,
     }).then(res => {
         if (res.status) {

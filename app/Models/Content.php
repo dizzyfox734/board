@@ -6,25 +6,18 @@ use CodeIgniter\Model;
 
 class Home extends Model
 {
+	protected $DBGroup = 'default';
     protected $table = 'BOARD_TB';
     protected $primaryKey = 'id';
-
-    protected $useSoftDeletes = true;
+	protected $useAutoIncrement = true;
+	protected $returnType = 'App\Entities\Content';
+	protected $useSoftDeletes = true;
+	protected $protectFields = true;
     
-    protected $allowedFields = ['content', 'deleted_at'];
+    protected $allowedFields = ['title', 'content', 'author', 'password', 'email', 'SECRET_FL'];
 
-    protected $useTimestamps = true;
-    protected $createdField = 'created_at';
-    protected $deletedField  = 'deleted_at';
-
-    public function getPosts()
-    {
-        return $this->findAll();        
-    }
-
-    public function selectAll() {
-		$this->select("{$this->table}.*")->where("{$this->table}.deleted_at", null);
-
-		return $this;
-	}
+    protected $useTimestamps = false;
+	protected $dateFormat = 'datetime';
+	protected $createdField = 'created_dt';
+	protected $deletedField = 'deleted_dt';
 }

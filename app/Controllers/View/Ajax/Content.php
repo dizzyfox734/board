@@ -15,13 +15,33 @@ class Content extends BaseController
     public function save($id = null)
     {
         $title = $this->request->getPost('title');
-        $content = $this->request->getPost('content');
+        $text = $this->request->getPost('content');
+        $author = $this->request->getPost('author');
         $secret_fl = $this->request->getPost('SECRET_FL');
 
-        if(id) {
-            $id = $this->request->getPost('id');
+        alert($title);
+
+        // 글쓰기일 때
+        if(!is_numeric($id)) {
             $email = $this->request->getPost('email');
-            $password = password_hash($this->request->getPost('password'), PASSWORD_DEFAULT);
+            $password = $this->request->getPost('password');
+            if($author == '') {
+                $author = 'Anonymous';
+            }
         }
+
+        if(is_numeric($id)) {
+            $content = $this->model->find($id);
+        } else {
+            $content = new \App\Entities\Content();
+        }
+
+        $content->title = $title;
+        $content->content = $text;
+        $content->author = $author;
+        $content->password = $password;
+        $content->SECRET_FL = $secret_fl;
+
+        $this->model->save($content);
     }
 }
