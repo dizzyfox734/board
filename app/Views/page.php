@@ -13,7 +13,7 @@
             </div>
             <div>
                 <a class="no-deco btn btn-white" href="">삭제</a>
-                <a class="no-deco btn btn-white" href="/content/edit/<?=$content->id?>">수정</a>
+                <a class="no-deco btn btn-white" href="/content/authenticate/edit/<?=$content->id?>">수정</a>
             </div>
         </div>
     </div>

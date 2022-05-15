@@ -8,8 +8,6 @@ function edit(id = false) {
         url += "/" + id;
     }
 
-    alert(formData.get('password'));
-
     fetch(url, {
         method: 'post',
         cache: 'no-cache',

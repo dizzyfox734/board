@@ -8,17 +8,17 @@
         <table class="board">
             <tr height="32px">
                 <th class="b-head th-grey">제목</th>
-                <th colspan="3" class="px-1 text-start">제목ㅅㄷㄴㅅ</th>
+                <th colspan="3" class="px-1 text-start"><?= $content->title ?></th>
             </tr>
             <tr height="32px">
                 <th class="th-grey">내용</th>
-                <th colspan="3" class="px-1 text-start">내용ㅅㄷㄴㅅ</th>
+                <th colspan="3" class="px-1 text-start"><?= $content->content ?></th>
             </tr>
         </table>
     </div>
     <div>글 작성시 설정한 비밀번호를 입력해주세요.</div>
     <div class="table-container">
-        <form>
+        <form id="authentication-form">
             <table class="board">
                 <tr height="32px">
                     <th class="th-grey">비밀번호</th>
@@ -30,12 +30,14 @@
 </div>
 <div class="d-flex justify-content-center">
     <a class="no-deco btn btn-white" href="/home/main">취소</a>
-    <button type="button" class="btn btn-purple" onClick="">완료</button>
+    <button type="button" class="btn btn-purple" onClick='checkPassword("<?= $type ?>", <?= $content->id ?> )'  >완료</button>
 </div>
-<div class="round warning hidden text-center">
+<div id="password-error" class="round warning hidden text-center">
     <h3 class="mb-1">비밀번호 확인</h3>
     <h4 class="m-0 mb-2">비밀번호가 일치하지 않습니다</h4>
     <div class="d-flex justify-content-center mb-2">
-        <button type="button" class="btn btn-purple" onClick="">확인</button>
+        <button type="button" class="btn btn-purple" onClick=setHidden()>확인</button>
     </div>
 </div>
+
+<script src="/assets/js/authenticate.js"></script>

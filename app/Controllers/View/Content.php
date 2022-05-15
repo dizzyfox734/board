@@ -33,15 +33,15 @@ class Content extends ViewController
     {
         $viewData = [];
 
-        if(is_numeric($id)) { // 수정  시 비번 인증
-            return $this->authenticate('edit', $id);
+        if(is_numeric($id)) {
+			$content = $this->model->find($id);
+			if(empty($content) || !$content) {
+				return $this->response->redirect("/home/main");
+        	}
+        	$viewData['content'] = $content;
+			return $this->showView('/edit', $viewData);
+            // return $this->authenticate('edit', $id);
         }
-        // $content = $this->model->find($id);
-        
-        // if(empty($content) || !$content) {
-        //     return $this->response->redirect("/home/main");
-        // }
-        // $viewData['content'] = $content;
         
         // 글쓰기
         return $this->showView('/edit', $viewData);
@@ -60,8 +60,6 @@ class Content extends ViewController
         $viewData['content'] = $content;
         return $this->showView('/authenticate', $viewData);
     }
-
-    
 
     public function save($id = null)
     {
@@ -94,4 +92,35 @@ class Content extends ViewController
 
         $this->model->save($content);
     }
+
+	public function checkPassword($type, $id)
+	{
+		$inputPassword = password_hash($this->request->getPost('password'), PASSWORD_DEFAULT);
+		$content = $this->model->find($id);
+
+
+		if($inputPassword == $content->password) {
+			// $res = [
+			// 	'status' => false,
+			// 	'err_code' => 0,
+			// ];
+			// $this->response->setStatusCode($resultHttpCode)->setJSON($res)->send();
+			// exit;
+			return $this->response->redirect("/home/main");
+		} else {
+			// $res = [
+			// 	'status' => true,
+			// ];
+			// $resultHttpCode = 200;
+			// $this->response->setStatusCode($resultHttpCode)->setJSON($res)->send();
+			// exit;
+            return $this->edit($id);
+		}
+
+		// if(empty($content) || !$content) {
+		// 	return $this->response->redirect("/home/main");
+		// } else {
+        //     return $this->showView("/edit/$id");
+		// }
+	}
 }
