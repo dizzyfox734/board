@@ -4,21 +4,21 @@
             <div class="purpleUserIcon-img"></div>
             <h3 class="m-0">방명록</h3>
         </div>
-        <h2 class="m-0 mb-1"><?= $content['title'] ?></h2>
+        <h2 class="m-0 mb-1"><?= $content->title ?></h2>
         <div class="d-flex justify-content-between">
             <div>
-                <span><?= $content['author'] ?></span>
-                <span class="text-gray"><?= $content['created_at'] ?></span>
-                <span class="text-gray">조회 <?= $content['view_cnt'] ?></span>
+                <span><?= $content->author ?></span>
+                <span class="text-gray"><?= $content->created_at ?></span>
+                <span class="text-gray">조회 <?= $content->view_cnt ?></span>
             </div>
             <div>
                 <a class="no-deco btn btn-white" href="">삭제</a>
-                <a class="no-deco btn btn-white" href="/content/edit/<?=$content['id']?>">수정</a>
+                <a class="no-deco btn btn-white" href="/content/edit/<?=$content->id?>">수정</a>
             </div>
         </div>
     </div>
     <div class="p-1 border-bottom">
-        <div><?= $content['content'] ?></div>
+        <div><?= $content->content ?></div>
     </div>
     <div class="p-1 border-bottom">
         <div class="d-flex mb-1">
@@ -61,9 +61,9 @@
 </div>
 <div class="d-flex justify-content-between">
     <div class="d-flex">
-        <a class="no-deco btn btn-purple" href="">글쓰기</a>
-        <button type="button" class="btn btn-white" onClick="">이전글</button>
-        <button type="button" class="btn btn-white" onClick="">다음글</button>
+        <a class="no-deco btn btn-purple" href="/content/edit">글쓰기</a>
+        <a class="no-deco btn btn-purple" href="/content/page/<?= ($content->id)-1 ?>">이전글</a>
+        <a class="no-deco btn btn-purple" href="/content/page/<?= ($content->id)+1 ?>">다음글</a>
     </div>
     <div class="d-flex">
         <a class="no-deco btn btn-white" href="/home/main">목록</a>
@@ -71,7 +71,7 @@
     </div>
 </div>
 <!-- 댓글삭제 눌렀을 때 -->
-<div class="round warning text-center"> <!-- hidden  --> 
+<div class="round hidden warning text-center"> 
     <h3 class="mb-1">댓글을 삭제하시겠습니까?</h3>
     <h4 class="m-0 mb-2">삭제 시 복구가 불가능합니다</h4>
     <h4 class="m-0 mb-2">글 작성 시 설정한 비밀번호를 입력해주세요</h4>

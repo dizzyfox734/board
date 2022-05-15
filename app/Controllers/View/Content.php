@@ -16,10 +16,13 @@ class Content extends ViewController
 
         if(is_numeric($id)) {
             $content = $this->model->find($id);
-            
             if(empty($content) || !$content) {
                 return $this->response->redirect("/home/main");
             }
+
+			// 조회수 올리기
+            $content->view_cnt += 1;
+			$this->model->save($content);
 
             $viewData['content'] = $content;
         }

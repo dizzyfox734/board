@@ -14,7 +14,7 @@ class Content extends Model
 	protected $useSoftDeletes = true;
 	protected $protectFields = true;
 
-    protected $allowedFields = ['title', 'content', 'author', 'password', 'email', 'SECRET_FL'];
+    protected $allowedFields = ['title', 'content', 'author', 'password', 'email', 'SECRET_FL', 'view_cnt'];
 
     protected $useTimestamps = false;
 	protected $dateFormat = 'datetime';
