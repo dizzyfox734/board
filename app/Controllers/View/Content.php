@@ -118,4 +118,10 @@ class Content extends ViewController
             // return $this->edit($id);
 		}
 	}
+
+    public function delete($id)
+    {
+        $this->model->delete($id);
+        return $this->response->redirect("/home/main");
+    }
 }

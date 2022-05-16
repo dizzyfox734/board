@@ -12,7 +12,7 @@
                 <span class="text-gray">조회 <?= $content->view_cnt ?></span>
             </div>
             <div>
-                <a class="no-deco btn btn-white" href="">삭제</a>
+                <a class="no-deco btn btn-white" href="/content/authenticate/delete/<?=$content->id?>">삭제</a>
                 <a class="no-deco btn btn-white" href="/content/authenticate/edit/<?=$content->id?>">수정</a>
             </div>
         </div>
