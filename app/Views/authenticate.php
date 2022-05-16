@@ -32,11 +32,13 @@
     <a class="no-deco btn btn-white" href="/home/main">취소</a>
     <button type="button" class="btn btn-purple" onClick='checkPassword("<?= $type ?>", <?= $content->id ?>)'  >완료</button>
 </div>
-<div id="password-error" class="round warning hidden text-center">
-    <h3 class="mb-1">비밀번호 확인</h3>
-    <h4 class="m-0 mb-2">비밀번호가 일치하지 않습니다</h4>
-    <div class="d-flex justify-content-center mb-2">
-        <button type="button" class="btn btn-purple" onClick=setHidden()>확인</button>
+<div id="password-error" class="hidden alert">
+    <div  class="round warning text-center m-auto">
+        <h3 class="mb-1">비밀번호 확인</h3>
+        <h4 class="m-0 mb-2">비밀번호가 일치하지 않습니다</h4>
+        <div class="d-flex justify-content-center mb-2">
+            <button type="button" class="btn btn-purple" onClick=changeHidden()>확인</button>
+        </div>
     </div>
 </div>
 

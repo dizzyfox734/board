@@ -184,8 +184,11 @@
 }
 
 .warning {
+    position: relative;
+    top: 30%;
     width: 400px;
     height: auto;
+    background-color: #fff;
 }
 
 .hidden {
@@ -194,4 +197,12 @@
 
 .text-gray {
     color: #969696;
+}
+
+.alert {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
 }

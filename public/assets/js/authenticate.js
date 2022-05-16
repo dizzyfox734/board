@@ -12,19 +12,19 @@ function checkPassword(type, id) {
 		referrer: 'no-referrer',
         body: formData,
     }).then(res => {
-        if (res.status) {
-            location.href = "/content/" + type + "/" + id;
-        } else {
-            alert(res.message);
-            return
-        }
+        return res.json();
+    }).then(json => {
+            if (json.status) {
+                location.href = "/content/" + type + "/" + id;
+            } else {
+                changeHidden();
+            }
     }).catch(error => {
         console.log(error);
-        alert(messages.INVALID);
     })
 }
 
-function setHidden() {
-	const block = document.getElementById("#password-error");
-	block.addClass('hidden');
+function changeHidden() {
+	const block = document.querySelector("#password-error");
+    block.classList.toggle('hidden');
 }

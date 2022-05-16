@@ -95,27 +95,24 @@ class Content extends ViewController
 
 	public function checkPassword($type, $id)
 	{
-		$inputPassword = password_hash($this->request->getPost('password'), PASSWORD_DEFAULT);
+        $inputPassword = $this->request->getPost('password');
 		$content = $this->model->find($id);
 
-
-		if($inputPassword == $content->password) { // 비번 맞음
+        if(password_verify($inputPassword, $content->password)) { // 비번 맞음
 			$res = [
 				'status' => true,
 			];
 			$resultHttpCode = 200;
 			$this->response->setStatusCode($resultHttpCode)->setJSON($res)->send();
 			exit;
-			// return $this->response->redirect("/home/main");
 		} else { // 비번 틀림
 			$res = [
 				'status' => false,
-                'message' => lang('Message.INVALID'),
 				'err_code' => 0,
 			];
+			$resultHttpCode = 200;
 			$this->response->setStatusCode($resultHttpCode)->setJSON($res)->send();
 			exit;
-            // return $this->edit($id);
 		}
 	}
 
