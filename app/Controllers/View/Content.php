@@ -51,7 +51,7 @@ class Content extends ViewController
     {
         $viewData = [];
 
-        if($type != 'edit' && $type != 'delete') {
+        if($type != 'edit' && $type != 'delete' && $type != 'page') {
             return $this->response->redirect("/home/main");
         }
 

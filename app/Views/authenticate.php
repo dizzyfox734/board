@@ -1,5 +1,5 @@
 <div class="detail">
-    <h2 class="m-0 mb-1">게시글 <?php if($type==='edit') { echo '수정'; } else { echo '삭제'; } ?></h2>
+    <h2 class="m-0 mb-1">게시글 <?php if($type==='edit') { echo '수정'; } else if($type==='delete') { echo '삭제'; } else { echo '보기'; } ?></h2>
     <?php if($type==='delete') { echo '<div>게시글 삭제 시 복구가 불가능합니다.</div>'; } ?>
 </div>
 <div class="round shadow mb-2 p-1">

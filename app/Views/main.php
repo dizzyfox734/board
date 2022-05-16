@@ -1,3 +1,5 @@
+
+
 <div class="detail">
     <div class="d-flex">
         <div class="userIcon-img"></div>
@@ -21,12 +23,18 @@
         </thead>
         <tbody>
 			<?php 
-			foreach($list as $content) { ?>
+			foreach($list as $content) { 
+                if($content->SECRET_FL == 1) {
+                    $isSecret = true;
+                } else {
+                    $isSecret = false;
+                };
+            ?>
 			<tr>
 			<td><?=$content->id?></td>
-			<td><a class="no-deco text-black d-flex align-items-center w-100 pl-2" href="/content/page/<?=$content->id?>">
+			<td><a class="no-deco text-black d-flex align-items-center w-100 pl-2" href=<?= $isSecret? "/content/authenticate/page/$content->id" : "/content/page/$content->id" ?>>
                 <?=$content->title?>
-                <?php if(($content->SECRET_FL) == 1) { ?><img class="lock-img"></img><?php } ?>
+                <?php if($isSecret) { ?><img class="lock-img"></img><?php } ?>
             </a></td>
 			<td><?=$content->author?></td>
 			<td><?=$content->created_dt->format('Y-m-d')?></td>
