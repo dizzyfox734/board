@@ -10,6 +10,11 @@
     padding: 1rem !important;
 }
 
+.p-2 {
+    padding: 2rem !important;
+}
+
+
 .px-1 {
     padding: 0 1rem !important;
 }
@@ -19,7 +24,15 @@
 }
 
 .pr-1 {
-    padding: 0 1rem 0 0 !important;
+    padding-right: 1rem !important;
+}
+
+.pl-1 {
+    padding-left: 1rem !important;
+}
+
+.pl-2 {
+    padding-left: 2rem !important;
 }
 
 .mx-1 {
@@ -105,6 +118,13 @@
     
 }
 
+.lock-img {
+    background: url('/assets/img/lock.png');
+    width: 18px;
+	height: 18px;
+    
+}
+
 .shadow {
     box-shadow: 0 0.10rem 0.15rem 0.10rem rgb(58 59 69 / 20%) !important;
 }
@@ -141,6 +161,10 @@
 
 .w-80 {
     width: 80% !important;
+}
+
+.w-65 {
+    width: 65% !important;
 }
 
 .bg-grey {

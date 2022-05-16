@@ -13,7 +13,7 @@
         <thead class="b-thead">
             <tr>
                 <td class="th-grey">번호</td>
-                <td class="th-grey">제목</td>
+                <td class="th-grey w-65">제목</td>
                 <td class="th-grey">작성자</td>
                 <td class="th-grey">작성일</td>
                 <td class="th-grey">조회수</td>
@@ -24,9 +24,12 @@
 			foreach($list as $content) { ?>
 			<tr>
 			<td><?=$content->id?></td>
-			<td><a class="no-deco text-black" href="/content/page/<?=$content->id?>"><?=$content->title?></a></td>
+			<td><a class="no-deco text-black d-flex align-items-center w-100 pl-2" href="/content/page/<?=$content->id?>">
+                <?=$content->title?>
+                <?php if(($content->SECRET_FL) == 1) { ?><img class="lock-img"></img><?php } ?>
+            </a></td>
 			<td><?=$content->author?></td>
-			<td><?=$content->created_dt?></td>
+			<td><?=$content->created_dt->format('Y-m-d')?></td>
 			<td><?=$content->view_cnt?></td>
 			</tr>
 			<?php } ?>

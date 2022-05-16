@@ -1,5 +1,5 @@
 <div class="round shadow mb-2">
-    <div class="p-1 border-bottom">
+    <div class="p-1 pl-2 border-bottom">
         <div class="d-flex mb-1">
             <div class="purpleUserIcon-img"></div>
             <h3 class="m-0">방명록</h3>
@@ -8,7 +8,7 @@
         <div class="d-flex justify-content-between">
             <div>
                 <span><?= $content->author ?></span>
-                <span class="text-gray"><?= $content->created_at ?></span>
+                <span class="text-gray p-1"><?= $content->created_dt ?></span>
                 <span class="text-gray">조회 <?= $content->view_cnt ?></span>
             </div>
             <div>
@@ -17,11 +17,11 @@
             </div>
         </div>
     </div>
-    <div class="p-1 border-bottom">
+    <div class="p-2 border-bottom">
         <div><?= $content->content ?></div>
     </div>
     <div class="p-1 border-bottom">
-        <div class="d-flex mb-1">
+        <div class="d-flex mb-1 pl-1">
             <div class="commment-img"></div>
             <h3 class="m-0">댓글</h3>
         </div>
