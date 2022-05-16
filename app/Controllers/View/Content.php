@@ -68,26 +68,26 @@ class Content extends ViewController
         $author = $this->request->getPost('author');
         $secret_fl = $this->request->getPost('SECRET_FL');
 
-        // 글쓰기일 때만
-        if(!is_numeric($id)) {
-            $id = $this->request->getPost('id');
-            $email = $this->request->getPost('email');
-            $password = password_hash($this->request->getPost('password'), PASSWORD_DEFAULT);
-            if($author == '') {
-                $author = 'Anonymous';
-            }
-        }
-
         if(is_numeric($id)) {
             $content = $this->model->find($id);
         } else {
             $content = new \App\Entities\Content();
         }
+
+        // 글쓰기일 때만
+        if(!is_numeric($id)) {
+            $email = $this->request->getPost('email');
+            $password = password_hash($this->request->getPost('password'), PASSWORD_DEFAULT);
+            if($author == '') {
+                $author = 'Anonymous';
+            }
+            $content->author = $author;
+            $content->password = $password;
+        }
+
         
         $content->title = $title;
         $content->content = $text;
-        $content->author = $author;
-        $content->password = $password;
         $content->SECRET_FL = $secret_fl;
 
         $this->model->save($content);
@@ -99,28 +99,23 @@ class Content extends ViewController
 		$content = $this->model->find($id);
 
 
-		if($inputPassword == $content->password) {
-			// $res = [
-			// 	'status' => false,
-			// 	'err_code' => 0,
-			// ];
-			// $this->response->setStatusCode($resultHttpCode)->setJSON($res)->send();
-			// exit;
-			return $this->response->redirect("/home/main");
-		} else {
-			// $res = [
-			// 	'status' => true,
-			// ];
-			// $resultHttpCode = 200;
-			// $this->response->setStatusCode($resultHttpCode)->setJSON($res)->send();
-			// exit;
-            return $this->edit($id);
+		if($inputPassword == $content->password) { // 비번 맞음
+			$res = [
+				'status' => true,
+			];
+			$resultHttpCode = 200;
+			$this->response->setStatusCode($resultHttpCode)->setJSON($res)->send();
+			exit;
+			// return $this->response->redirect("/home/main");
+		} else { // 비번 틀림
+			$res = [
+				'status' => false,
+                'message' => lang('Message.INVALID'),
+				'err_code' => 0,
+			];
+			$this->response->setStatusCode($resultHttpCode)->setJSON($res)->send();
+			exit;
+            // return $this->edit($id);
 		}
-
-		// if(empty($content) || !$content) {
-		// 	return $this->response->redirect("/home/main");
-		// } else {
-        //     return $this->showView("/edit/$id");
-		// }
 	}
 }

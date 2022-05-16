@@ -28,12 +28,12 @@
                 <th>
                     <label for="public" class="d-flex">
                         <!-- 수정 시 공개글일 때 체크 -->
-                        <input type="radio" id="public" name="SECRET_FL" <?php if(isSet($content)) { if($content->SECRET_FL == 0) { echo 'checked'; } } ?> />
+                        <input type="radio" id="public" name="SECRET_FL" value="0" <?php if(isSet($content)) { if($content->SECRET_FL == 0) { echo 'checked'; } } ?> />
                         <h4 class="m-0">공개글 설정</h4>
                     </lable>
                     <label for="secret" class="d-flex">
                         <!-- 수정 시 비밀글일 때 체크 -->
-                        <input type="radio" id="secret" name="SECRET_FL" <?php if(isSet($content)) { if($content->SECRET_FL == 1) { echo 'checked'; } } ?> />
+                        <input type="radio" id="secret" name="SECRET_FL" value="1" <?php if(isSet($content)) { if($content->SECRET_FL == 1) { echo 'checked'; } } ?> />
                         <h4 class="m-0">비밀글 설정</h4>
                     </label>
                 </th>

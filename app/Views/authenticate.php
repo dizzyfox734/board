@@ -30,7 +30,7 @@
 </div>
 <div class="d-flex justify-content-center">
     <a class="no-deco btn btn-white" href="/home/main">취소</a>
-    <button type="button" class="btn btn-purple" onClick='checkPassword("<?= $type ?>", <?= $content->id ?> )'  >완료</button>
+    <button type="button" class="btn btn-purple" onClick='checkPassword("<?= $type ?>", <?= $content->id ?>)'  >완료</button>
 </div>
 <div id="password-error" class="round warning hidden text-center">
     <h3 class="mb-1">비밀번호 확인</h3>
