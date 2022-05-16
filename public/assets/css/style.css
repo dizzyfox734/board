@@ -183,6 +183,10 @@
     color: #000;
 }
 
+.text-gray {
+    color: #969696;
+}
+
 .warning {
     position: relative;
     top: 30%;
@@ -193,10 +197,6 @@
 
 .hidden {
     display: none;
-}
-
-.text-gray {
-    color: #969696;
 }
 
 .alert {

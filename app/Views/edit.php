@@ -10,7 +10,7 @@
             </tr>
             <tr>
                 <th class="th-grey">내용</th>
-                <th colspan="3"><textarea class="txt-round w-95" name="content" rows="15"><?= isSet($content) ? $content->content : '' ?></textarea></th>
+                <th colspan="3"><textarea id="summernote-editor" class="txt-round w-95" name="content" rows="15"><?= isSet($content) ? $content->content : '' ?></textarea></th>
             </tr>
             <!-- 새 글 등록 시에만 보임 -->
             <?= isSet($content) ? '' : '<tr>
@@ -47,3 +47,24 @@
 </div>
 
 <script src="/assets/js/edit.js"></script>
+
+<!-- include summernote css/js -->
+<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+<link href="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote-lite.min.css" rel="stylesheet">
+<script src="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote-lite.min.js"></script>
+<script>
+      $('#summernote-editor').summernote({
+        placeholder: 'Hello stand alone ui',
+        tabsize: 2,
+        height: 350,
+        toolbar: [
+          ['style', ['style']],
+          ['font', ['bold', 'underline', 'clear']],
+          ['color', ['color']],
+          ['para', ['ul', 'ol', 'paragraph']],
+          ['table', ['table']],
+          ['insert', ['link', 'picture', 'video']],
+          ['view', ['fullscreen', 'codeview', 'help']]
+        ]
+      });
+</script>
