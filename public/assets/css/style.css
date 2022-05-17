@@ -6,6 +6,10 @@
     margin: 0 !important;
 }
 
+.mr-03 {
+    margin-right: 0.3rem !important;
+}
+
 .p-1 {
     padding: 1rem !important;
 }
@@ -13,7 +17,6 @@
 .p-2 {
     padding: 2rem !important;
 }
-
 
 .px-1 {
     padding: 0 1rem !important;
@@ -205,4 +208,8 @@
     height: 100%;
     top: 0;
     left: 0;
+}
+
+.text-purple {
+    color: #a166d5;
 }

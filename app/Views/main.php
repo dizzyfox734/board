@@ -1,5 +1,3 @@
-
-
 <div class="detail">
     <div class="d-flex">
         <div class="userIcon-img"></div>
@@ -33,7 +31,8 @@
 			<tr>
 			<td><?=$content->id?></td>
 			<td><a class="no-deco text-black d-flex align-items-center w-100 pl-2" href=<?= $isSecret? "/content/authenticate/page/$content->id" : "/content/page/$content->id" ?>>
-                <?=$content->title?>
+                <span class=" mr-03"><?=$content->title?></span>
+                <?php if($comment_cnt[$content->id]) { ?><span class='text-purple mr-03'>[<?=$comment_cnt[$content->id]?>] </span> <?php } ?>
                 <?php if($isSecret) { ?><img class="lock-img"></img><?php } ?>
             </a></td>
 			<td><?=$content->author?></td>
