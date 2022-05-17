@@ -44,17 +44,17 @@
         </div>
     </div>
     <div class="p-1 bg-grey">
-        <form>
+        <form id="comment-form">
             <div class="d-flex align-items-center mb-1">
                 <span>작성자</span>
-                <input type="text" class="txt-round mx-1"/>
+                <input type="text" name="author" class="txt-round mx-1"/>
                 <span>비밀번호</span>
-                <input type="text" class="txt-round mx-1" />
+                <input type="text" name="password" class="txt-round mx-1" />
             </div>
-            <textarea class="text-round w-100" placeholder="댓글을 남겨보세요"></textarea>
+            <textarea name="content" class="text-round w-100" placeholder="댓글을 남겨보세요"></textarea>
             <div class="d-flex justify-content-between">
                 <button type="button">이미지</button>
-                <button type="button" class="btn btn-white" onClick="">등록</button>
+                <button type="button" class="btn btn-white" onClick="saveComment(<?= ($content->id) ?>)">등록</button>
             </div>
         </form>
     </div>
@@ -80,3 +80,5 @@
         <button type="button" class="btn btn-purple" onClick="">확인</button>
     </div>
 </div>
+
+<script src="/assets/js/comment.js"></script>
