@@ -25,11 +25,12 @@
             <div class="commment-img"></div>
             <h3 class="m-0">댓글</h3>
         </div>
-        <div class="round p-1" id="commentBox">
+        <?php foreach($commentList as $comment) { ?>
+        <div class="round p-1 mb-03" id="commentBox">
             <div class="d-flex justify-content-between">
                 <div>
-                    <span class="pr-1">작성자</span>
-                    <span>작성일</span>
+                    <span class="pr-1"><?= $comment->author ?></span>
+                    <span class="text-gray"><?= $comment->created_dt ?></span>
                 </div>
                 <div>
                     <button type="button" class="btn btn-white" onClick="">삭제</button>
@@ -39,9 +40,10 @@
                 이미지
             </div>
             <div>
-                댓글내용
+                <?= $comment->content ?>
             </div>
         </div>
+        <?php } ?>
     </div>
     <div class="p-1 bg-grey">
         <form id="comment-form">

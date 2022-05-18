@@ -4,11 +4,15 @@ namespace App\Controllers\View;
 
 class Content extends ViewController
 {
+    private $model;
+    private $comment_model;
+
     public function initController(\CodeIgniter\HTTP\RequestInterface $request, \CodeIgniter\HTTP\ResponseInterface $response, \Psr\Log\LoggerInterface $logger)
 	{
 		// Do Not Edit This Line
         parent::initController($request, $response, $logger);
         $this->model = model('Content');
+        $this->comment_model = model('Comment');
     }
 
 	public function page($id) {
@@ -25,6 +29,7 @@ class Content extends ViewController
 			$this->model->save($content);
 
             $viewData['content'] = $content;
+            $viewData['commentList'] = $this->getComment($id);
         }
 		return $this->showView('/page', $viewData);
 	}
@@ -120,5 +125,15 @@ class Content extends ViewController
     {
         $this->model->delete($id);
         return $this->response->redirect("/home/main");
+    }
+
+    public function getComment($contentId)
+    {
+        $sql = "select author, created_dt, content from COMMENT_TB where main_content_id = ${contentId};";
+
+        $db = db_connect();
+        $list = $db->query($sql)->getResult();
+
+        return $list;
     }
 }
