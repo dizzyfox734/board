@@ -47,7 +47,7 @@ function checkPassword(id) {
         return res.json();
     }).then(json => {
             if (json.status) {
-                location.href = "/comment/delete/" + id;
+                window.location.reload();
             } else {
                 window.location.reload();
             }

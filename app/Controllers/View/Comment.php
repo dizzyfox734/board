@@ -37,25 +37,20 @@ class Comment extends ViewController
         $this->model->save($comment);
     }
 
-    public function delete($contentId)
-    {        
-        $this->model->delete($contentId);
-        return $this->response->redirect("/home/main");
-    }
-
 	public function checkPassword($id)
 	{
         $inputPassword = $this->request->getPost('password');
 		$comment = $this->model->find($id);
 
-        if(password_verify($inputPassword, $comment->password)) { // 비번 맞음
+        if(password_verify($inputPassword, $comment->password)) { // 비번 맞을 시
+            $this->delete($id); // 삭제
 			$res = [
 				'status' => true,
 			];
 			$resultHttpCode = 200;
 			$this->response->setStatusCode($resultHttpCode)->setJSON($res)->send();
 			exit;
-		} else { // 비번 틀림
+		} else { // 비번 틀리면 에러 반환
 			$res = [
 				'status' => false,
 				'err_code' => 0,
@@ -65,4 +60,9 @@ class Comment extends ViewController
 			exit;
 		}
 	}
+
+    public function delete($id)
+    {        
+        $this->model->delete($id);
+    }
 }
