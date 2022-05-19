@@ -22,7 +22,7 @@
     </div>
     <div class="p-1 border-bottom">
         <div class="d-flex mb-1 pl-1">
-            <div class="commment-img"></div>
+            <div class="commentIcon-img"></div>
             <h3 class="m-0">댓글</h3>
         </div>
         <?php foreach($commentList as $comment) { ?>
@@ -36,8 +36,8 @@
                     <button type="button" class="btn btn-white" onClick="deleteComment(<?= $comment->id ?>)">삭제</button>
                 </div>
             </div>
-            <!-- < ?php if($comment->image_file) { ?>
-            <div><image scr="< ?= $comment->image_file ?>" /></div> < ?php } ?> -->
+            <?php if($comment->image_file) { ?>
+            <div><image class="comment-img" src="/image/show/<?= $comment->image_file ?>"></img></div> <?php } ?>
             <div>
                 <?= $comment->content ?>
             </div>
@@ -56,7 +56,6 @@
                 <div class="custom-file">
                     <input type="file" class="" name="image_file" accept="image/*">
                 </div>
-                <button type="button">이미지</button>
                 <button type="button" class="btn btn-white" onClick="saveComment(<?= $content->id ?>)">등록</button>
             </div>
         </form>

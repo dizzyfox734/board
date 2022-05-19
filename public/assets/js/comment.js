@@ -26,6 +26,7 @@ function saveComment(contentId) {
     })
 }
 
+// show delete alert
 function deleteComment(contentId) {
     const btn = document.querySelector("#delete-check");
     btn.setAttribute("onClick", `checkPassword(${contentId})`);

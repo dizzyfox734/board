@@ -14,7 +14,7 @@ class Comment extends Model
 	protected $useSoftDeletes = true;
 	protected $protectFields = true;
 
-    protected $allowedFields = ['main_content_id', 'content', 'author', 'password'];
+    protected $allowedFields = ['main_content_id', 'content', 'image_file', 'author', 'password'];
 
     protected $useTimestamps = false;
 	protected $dateFormat = 'datetime';

@@ -15,7 +15,7 @@ class Comment extends ViewController
 
     public function save($contentId)
     {
-        $comment = new \App\Entities\Content();
+        $comment = new \App\Entities\Comment();
 
         $text = $this->request->getPost('content');
         $author = $this->request->getPost('author');
@@ -23,23 +23,14 @@ class Comment extends ViewController
             $author = '홍길동';
         }
         $password = password_hash($this->request->getPost('password'), PASSWORD_DEFAULT);
-                
-        // $img = $this->request->getFile('image_file');
-        // if(!$img->hasMoved()) {
-        //     $filepath = WRITEPATH . 'uploads/' . $img->store();
-
-        //     $data = ['uploaded_fileInfo' => new File($filepath)];
-
-        //     return $this->showView('/test', $data);
-        // } else {
-        //     $data = ['errors' => 'The file has already been moved.'];
-        //     return $this->showView('/test', $data);
-        // }
-
+        // save image file
+        $img = $this->request->getFile('image_file');
+        $filename = $img->getRandomName();
+        $img->move(WRITEPATH . 'uploads/comment_img', $filename);
 
         $comment->author = $author;
         $comment->content = $text;
-        // $comment->image_file = $img;
+        $comment->image_file = $filename;
         $comment->password = $password;
         $comment->main_content_id = $contentId;
 
