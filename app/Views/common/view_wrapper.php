@@ -2,6 +2,7 @@
 <html>
     <head>
         <meta charset="utf-8">
+        <link rel="stylesheet" type="text/css" href="/assets/css/image.css" />
         <link rel="stylesheet" type="text/css" href="/assets/css/style.css" />
         <link rel="stylesheet" type="text/css" href="/assets/css/table.css" />
         <link rel="stylesheet" type="text/css" href="/assets/css/top.css" />
@@ -10,7 +11,7 @@
     <body>
         <!-- top banner -->
         <div class="d-flex banner">
-            <div class="banner-img"></div>
+            <a class="banner-img" href="/home/main"></a>
         </div>
 
         <!-- main content -->

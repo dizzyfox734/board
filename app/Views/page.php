@@ -74,7 +74,7 @@
     </div>
     <div class="d-flex">
         <a class="no-deco btn btn-white" href="/home/main">목록</a>
-        <button type="button" class="btn btn-white" onClick="javascript:window.scrollTo(0, 0)">TOP</button>
+        <button type="button" class="btn btn-white" onClick="javascript:window.scrollTo(0, 0)">▲TOP</button>
     </div>
 </div>
 

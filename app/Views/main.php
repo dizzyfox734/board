@@ -1,3 +1,9 @@
+<!-- DataTable -->
+<link rel="stylesheet" href="https://cdn.datatables.net/1.12.0/css/jquery.dataTables.min.css" />
+<link rel="stylesheet" href="https://cdn.datatables.net/1.12.0/css/dataTables.bootstrap5.min.css" />
+<script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+<script src="https://cdn.datatables.net/1.12.0/js/jquery.dataTables.min.js"></script>
+
 <div class="detail">
     <div class="d-flex">
         <div class="userIcon-img"></div>
@@ -5,15 +11,15 @@
     </div>
     <div>야몬에게 방명록을 남겨주세요 :)</div>
 </div>
+<div class="mb-1 d-flex width-full justify-content-end">
+    <a class="no-deco btn btn-purple m-0" href="/content/edit">글쓰기</a>
+</div>
 <div class="table-container">
-    <div class="mb-1 d-flex width-full justify-content-end">
-        <a class="no-deco btn btn-purple m-0" href="/content/edit">글쓰기</a>
-    </div>
-    <table id="content-table" class="board b-cell">
+    <table id="content-table" class="board board-purple-top table nowrap hover compact">
         <thead class="b-thead">
             <tr>
                 <td class="th-grey">번호</td>
-                <td class="th-grey w-65">제목</td>
+                <td class="th-grey w-50">제목</td>
                 <td class="th-grey">작성자</td>
                 <td class="th-grey">작성일</td>
                 <td class="th-grey">조회수</td>
@@ -43,3 +49,5 @@
         </tbody>
     </table>
 </div>
+
+<script src="/assets/js/table.js"></script>
