@@ -3,12 +3,12 @@
 }
 
 .board {
-    width: 100%;
+    width: 100% !important;
     text-align: center;
 }
 
 .board-purple-top {
-    border-top: #a166d5 solid 2px;
+    border-top: #a166d5 solid 3px;
 }
 
 .b-thead {
