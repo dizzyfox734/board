@@ -33,17 +33,15 @@
                     <span class="text-gray"><?= $comment->created_dt ?></span>
                 </div>
                 <div>
-                    <button type="button" class="btn btn-white" onClick="">삭제</button>
+                    <button type="button" class="btn btn-white" onClick="deleteComment(<?= $comment->id ?>)">삭제</button>
                 </div>
             </div>
-            <div>
-                이미지
-            </div>
+            <!-- < ?php if($comment->image_file) { ?>
+            <div><image scr="< ?= $comment->image_file ?>" /></div> < ?php } ?> -->
             <div>
                 <?= $comment->content ?>
             </div>
-        </div>
-        <?php } ?>
+        </div> <?php } ?>
     </div>
     <div class="p-1 bg-grey">
         <form id="comment-form">
@@ -55,13 +53,16 @@
             </div>
             <textarea name="content" class="text-round w-100" placeholder="댓글을 남겨보세요"></textarea>
             <div class="d-flex justify-content-between">
+                <div class="custom-file">
+                    <input type="file" class="" name="image_file" accept="image/*">
+                </div>
                 <button type="button">이미지</button>
-                <button type="button" class="btn btn-white" onClick="saveComment(<?= ($content->id) ?>)">등록</button>
+                <button type="button" class="btn btn-white" onClick="saveComment(<?= $content->id ?>)">등록</button>
             </div>
         </form>
     </div>
 </div>
-<div class="d-flex justify-content-between">
+<div class="d-flex justify-content-between mb-2">
     <div class="d-flex">
         <a class="no-deco btn btn-purple" href="/content/edit">글쓰기</a>
         <a class="no-deco btn btn-purple" href="/content/page/<?= ($content->id)-1 ?>">이전글</a>
@@ -69,17 +70,24 @@
     </div>
     <div class="d-flex">
         <a class="no-deco btn btn-white" href="/home/main">목록</a>
-        <button type="button" class="btn btn-white" onClick="">TOP</button>
+        <button type="button" class="btn btn-white" onClick="javascript:window.scrollTo(0, 0)">TOP</button>
     </div>
 </div>
+
 <!-- 댓글삭제 눌렀을 때 -->
-<div class="round hidden warning text-center"> 
-    <h3 class="mb-1">댓글을 삭제하시겠습니까?</h3>
-    <h4 class="m-0 mb-2">삭제 시 복구가 불가능합니다</h4>
-    <h4 class="m-0 mb-2">글 작성 시 설정한 비밀번호를 입력해주세요</h4>
-    <div class="d-flex justify-content-center mb-2">
-        <button type="button" class="btn btn-white" onClick="">취소</button>
-        <button type="button" class="btn btn-purple" onClick="">확인</button>
+<div id="password-error" class="hidden alert">
+    <div class="round warning text-center m-auto"> 
+        <h4 class="mb-1">댓글을 삭제하시겠습니까?</h4>
+        <span class="d-block m-0">삭제 시 복구가 불가능합니다</span>
+        <span class="d-block m-0 mb-2">댓글 작성 시 설정한 비밀번호를 입력해주세요</span>
+        <form id="commentPass-form" class="d-flex justify-content-center align-items-center mb-2">
+            <span class="mr-03">비밀번호</span>
+            <input class="txt-round w-50" type="text" name="password" autocomplete="off" placeholder="비밀번호를 입력해주세요">
+        </form>
+        <div class="d-flex justify-content-center mb-2">
+            <button type="button" class="btn btn-white" onClick="javascript:window.location.reload()">취소</button>
+            <button id="delete-check" class="btn btn-purple" onClick="">확인</button>
+        </div>
     </div>
 </div>
 

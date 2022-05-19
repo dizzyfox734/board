@@ -40,7 +40,7 @@ class Home extends ViewController
 
         foreach($list as $content) {
             $id = $content->id;
-            $sql = "select count(*) as count from COMMENT_TB where main_content_id = ${id};";
+            $sql = "select count(*) as count from COMMENT_TB where main_content_id = ${id} and deleted_dt IS NULL;";
 
             $arr[$id] = $db->query($sql)->getRow()->count;
         }

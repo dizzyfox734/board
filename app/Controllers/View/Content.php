@@ -84,7 +84,7 @@ class Content extends ViewController
             $email = $this->request->getPost('email');
             $password = password_hash($this->request->getPost('password'), PASSWORD_DEFAULT);
             if($author == '') {
-                $author = 'Anonymous';
+                $author = '홍길동';
             }
             $content->author = $author;
             $content->password = $password;
@@ -129,7 +129,7 @@ class Content extends ViewController
 
     public function getComment($contentId)
     {
-        $sql = "select author, created_dt, content from COMMENT_TB where main_content_id = ${contentId};";
+        $sql = "select id, author, created_dt, content, image_file from COMMENT_TB where main_content_id = ${contentId} and deleted_dt IS NULL;";
 
         $db = db_connect();
         $list = $db->query($sql)->getResult();

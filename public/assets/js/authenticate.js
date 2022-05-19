@@ -25,6 +25,6 @@ function checkPassword(type, id) {
 }
 
 function changeHidden() {
-	const block = document.querySelector("#password-error");
-    block.classList.toggle('hidden');
+	const passError = document.querySelector("#password-error");
+    passError.classList.toggle('hidden');
 }

@@ -62,6 +62,10 @@
     display: flex;
 }
 
+.d-block {
+    display: block;
+}
+
 .align-items-center {
     align-items: center;
 }
@@ -172,6 +176,10 @@
 
 .w-65 {
     width: 65% !important;
+}
+
+.w-50 {
+    width: 50% !important;
 }
 
 .bg-grey {
