@@ -12,8 +12,8 @@
                 <span class="text-gray">조회 <?= $content->view_cnt ?></span>
             </div>
             <div>
-                <a class="no-deco btn btn-white" href="/content/authenticate/delete/<?=$content->id?>">삭제</a>
-                <a class="no-deco btn btn-white" href="/content/authenticate/edit/<?=$content->id?>">수정</a>
+                <a class="no-deco btn-grey" href="/content/authenticate/delete/<?=$content->id?>">삭제</a>
+                <a class="no-deco btn-grey" href="/content/authenticate/edit/<?=$content->id?>">수정</a>
             </div>
         </div>
     </div>
@@ -26,14 +26,14 @@
             <h3 class="m-0">댓글</h3>
         </div>
         <?php foreach($commentList as $comment) { ?>
-        <div class="round p-1 mb-03" id="commentBox">
-            <div class="d-flex justify-content-between">
+        <div class="round p-05 px-1 mb-03" id="commentBox">
+            <div class="d-flex justify-content-between pb-05">
                 <div>
                     <span class="pr-1"><?= $comment->author ?></span>
                     <span class="text-gray"><?= $comment->created_dt ?></span>
                 </div>
                 <div>
-                    <button type="button" class="btn btn-white" onClick="deleteComment(<?= $comment->id ?>)">삭제</button>
+                    <button type="button" class="btn-grey" onClick="deleteComment(<?= $comment->id ?>)">삭제</button>
                 </div>
             </div>
             <?php if($comment->image_file) { ?>
@@ -51,13 +51,18 @@
                 <span>비밀번호</span>
                 <input type="text" name="password" class="txt-round mx-1" />
             </div>
-            <textarea name="content" class="text-round w-100" placeholder="댓글을 남겨보세요"></textarea>
-            <div class="d-flex justify-content-between">
-                <div class="custom-file">
-                    <input type="file" class="" name="image_file" accept="image/*">
+            <div class="txt-round mb-1 bg-white">
+                <textarea name="content" class="comment-txt w-100 mb-1" rows="3" placeholder="댓글을 남겨보세요"></textarea>
+
+                <div class="d-flex justify-content-between">
+                <label class="custom-file" for="image_input">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24"><path fill="none" d="M0 0h24v24H0z"/><path d="M4.828 21l-.02.02-.021-.02H2.992A.993.993 0 0 1 2 20.007V3.993A1 1 0 0 1 2.992 3h18.016c.548 0 .992.445.992.993v16.014a1 1 0 0 1-.992.993H4.828zM20 15V5H4v14L14 9l6 6zm0 2.828l-6-6L6.828 19H20v-1.172zM8 11a2 2 0 1 1 0-4 2 2 0 0 1 0 4z" fill="rgba(161,102,213,1)"/></svg>
+                    <input type="file" class="hidden" id="image_input" name="image_file" accept="image/*">
+                </label>
+                <button type="button" class="no-border bg-white" onClick="saveComment(<?= $content->id ?>)">등록</button>
                 </div>
-                <button type="button" class="btn btn-white" onClick="saveComment(<?= $content->id ?>)">등록</button>
             </div>
+
         </form>
     </div>
 </div>
